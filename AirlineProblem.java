@@ -50,22 +50,7 @@ public class AirlineProblem {
             pathForMiles.add(current);
             return true;
         }
-        else if(airlinesVisited.contains(current))
-            // base case 2, I have already been here
-            // don't go into a cycle
-            return false;
-        else{
-            // I have not been here and it isn't
-            // the goal so check its partners
-            // now I have been here
-            airlinesVisited.add(current);
-            
-            // add this to the path
-            pathForMiles.add(current);
-            
-            // find this airline in the network
-            int pos = -1;
-            int index = 0;
+        
             while(pos == -1 && index < network.size()){
                 if(network.get(index).getName().equals(current))
                     pos = index;
